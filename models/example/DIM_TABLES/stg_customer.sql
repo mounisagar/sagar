@@ -1,2 +1,6 @@
 {{ config(materialized='table') }}
-(select * from DBT_DATABASE.PUBLIC.CUSTOMER)
+with customers_data as 
+(
+    select * from {{source('raw','customers')}} 
+    )
+select * from  customers_data

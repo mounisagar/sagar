@@ -1,2 +1,7 @@
 {{ config(materialized='table') }}
-(select * from DBT_DATABASE.PUBLIC.PAYMENTS)
+
+with payment_data as 
+(
+    select * from {{source('raw','payments')}} 
+    )
+select * from payment_data
