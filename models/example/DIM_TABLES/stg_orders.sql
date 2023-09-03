@@ -1,2 +1,6 @@
 {{ config(materialized='view') }}
-(select * from DBT_DATABASE.PUBLIC.ORDERS)
+with order_data as 
+(
+    select * from {{source('raw','orders')}} 
+    )
+select * from order_data
