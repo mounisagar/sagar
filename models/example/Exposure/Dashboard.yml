@@ -1,0 +1,12 @@
+version: 2
+exposures:
+- name: Executive Dashboard
+  type: dashboard
+  maturity: low
+  url: https://95fdbed2.us1a.app.preset.io/superset/explore/p/kOZL20AmPoy/
+  description: Executive Dashboard about Shipping_orders
+  depends_on:
+   - ref('dim_cust')
+  owner:
+     name: vidysagar
+     email: vdsagar3230@gmail.com
